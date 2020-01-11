@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head id = "slide">
+  <body>
+
+    <div class="header">
+      <h1>BANDIC BILAL</h1>
+      <p>Software Engineer</p>
+    </div>
+
+    <nav>
+      <img src="cloud-clipart-conversation-2-original.png" id = "ccloud">
+      <img src="44342809_1927274054033697_301073264669622272_o.jpg" id="profilePicture">
+      <p id ="nav">Creative Personal<br>CV/ResumePortfolio<br>HTML5/CSS3<br>Template</p>
+    </nav>
+
+    <div class="main">
+
+      <section class="stage">
+        <div id="home" class="div"><p id="homep" class="p"><a href = "index.html">Home</a></p></div>
+        <div class="div" id="about"><p class="p"><a href = "About me/index.html">About</a></p></div>
+        <div class="div" id="work"><p class="p"><a href = "Work Expirience/index.html">Work</a></p></div>
+        <div class="div" id="contact"><p class="p"><a href = "Contact me/index.html">Contact</a></p></div>
+        <div class="div" id="gallery"><p class="p"><a href = "fp/index.html">First_Pro</a></p></div>
+      </section>
+
+      <button id = "button">Click here!</button>
+
+      <script>
+        var today = new Date();
+        var hourNow = today.getHours();
+        var greeting;
+        if (hourNow > 6) {
+          greeting = 'Good evening!';
+        }else if (hourNow > 12) {
+          greeting = 'Good afternoon!';
+        }else if (hourNow > 0) {
+          greeting = 'Good morning!';
+        }else {
+          greeting = 'Welcome!';
+        }
+
+        document.write('<h3 id = "pozdrav">' + greeting + '</h3>');
+
+        $(document).ready(function(){
+          $("#pozdrav").hide();
+          $("#profilePicture").hide();
+          $("button").click(function(){
+            $("#button").fadeOut();
+            $("#profilePicture").slideDown();
+            $("#pozdrav").fadeIn(3000);
+          });
+        });
+
+        window.alert("Proceeding on your own risk!!!");
+      </script>
+
+      <div class="fixed">
+        <p>&copy;<em> 2019 BB</em></p>
+
+      </div>
+
+    </div>
+
+      <div class = "footer" id="footer">
+        <form action="insert.php" method="POST">
+          First Name: <input id = "username" type="text" name="firstName" placeholder="First Name" size="20" maxlength="30" required="" onblur="checkUsername()"><br>
+          Last Name: <input type="text" name="lastName" placeholder="Last Name" size="20" maxlength="30" required=""><br>
+          Message:<br> <textarea name="message" cols="50" maxlength="600" rows="10" placeholder="Write your message"></textarea><br>
+          <input type="submit" name=""><input type="reset" name="">
+        </form>
+      </div>
+
+  </body>
+</html>
